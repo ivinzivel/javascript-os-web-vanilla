@@ -66,7 +66,21 @@
                 </section>
                 <span class="window-name">Map</span>
             </header>
-            <iframe src="https://stackblitz.com/edit/web-platform-li1mtd" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d467690.69940787245!2d-46.59530130347702!3d-23.681908383741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sgoogle%20maps!5e0!3m2!1spt-BR!2sbr!4v1645773854813!5m2!1spt-BR!2sbr" loading="lazy"></iframe>
+
+        </section>
+
+        <section class="window hidded" id="code">
+
+            <header class="window-header" id="codeHeader">
+                <section class="buttons">
+                    <span class="close" onclick="windowHandler('code')"></span>
+                    <span class="minimize" onclick="maximizeHandler('code')"></span>
+                    <span class="maximize"></span>
+                </section>
+                <span class="window-name">Code</span>
+            </header>
+            <iframe src="https://stackblitz.com/edit/web-platform-li1mtd?embed=1&file=index.html" id="stackBlitz" loading="lazy"></iframe>
 
         </section>
 
@@ -111,7 +125,7 @@
             <img src="https://img.icons8.com/color/344/computer.png">
             <img src="https://img.icons8.com/color/344/chrome--v1.png" onclick="windowHandler('browser')">
             <img src="https://img.icons8.com/color/344/map.png" onclick="windowHandler('map')">
-            <img src="https://img.icons8.com/color/344/visual-studio-code-2019.png">
+            <img src="https://img.icons8.com/color/344/visual-studio-code-2019.png" onclick="windowHandler('code')">
             <img src="https://img.icons8.com/color/344/settings--v1.png">
         </section>
     </footer>
