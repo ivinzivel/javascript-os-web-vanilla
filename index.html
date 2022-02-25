@@ -1,11 +1,122 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-  </head>
-  <body>
-    <h1>Hello there!</h1>
-    <a href="/me.html">My other page</a>
-  </body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="booting" id="bootSection">
+        <h1>Booting <b>Javascript Web OS</b>, please wait a few seconds</h1>
+    </section>
+
+    <main class="desktop">
+
+        <section class="window" id="folder">
+
+            <header class="window-header" id="folderHeader">
+                <section class="buttons">
+                    <span class="close" onclick="windowHandler('folder')"></span>
+                    <span class="minimize" onclick="maximizeHandler('folder')"></span>
+                    <span class="maximize"></span>
+                </section>
+                <span class="window-name">folder</span>
+            </header>
+
+            <section class="window-content folder">
+
+                <aside>
+
+                </aside>
+
+                <main>
+
+                    <h1>Work in progress...</h1>
+
+                </main>
+
+            </section>
+
+        </section>
+
+        <section class="window hidded" id="browser">
+
+            <header class="window-header" id="browserHeader">
+                <section class="buttons">
+                    <span class="close" onclick="windowHandler('browser')"></span>
+                    <span class="minimize" onclick="maximizeHandler('browser')"></span>
+                    <span class="maximize"></span>
+                </section>
+                <span class="window-name">Browser</span>
+            </header>
+            <iframe src="https://www.bing.com/?cc=br" frameborder="0"></iframe>
+
+        </section>
+
+        <section class="window hidded" id="map">
+
+            <header class="window-header" id="mapHeader">
+                <section class="buttons">
+                    <span class="close" onclick="windowHandler('map')"></span>
+                    <span class="minimize" onclick="maximizeHandler('map')"></span>
+                    <span class="maximize"></span>
+                </section>
+                <span class="window-name">Map</span>
+            </header>
+            <iframe src="https://stackblitz.com/edit/web-platform-li1mtd" loading="lazy"></iframe>
+
+        </section>
+
+        <section class="current-date">
+            <span class="time">
+                <span id="currentHour"></span>:<span id="currentMinute"></span>
+            </span>
+            <span class="date">
+                <span id="currentDay"></span>/<span id="currentMonth"></span>/<span id="currentYear"></span>
+            </span>
+        </section>
+
+        <ul class="icons">
+
+            <li class="icon">
+                <img src="https://img.icons8.com/color/344/filled-trash.png">
+                <h1>trash</h1>
+            </li>
+
+            <li class="icon" onclick="windowHandler('folder')">
+                <img src="https://img.icons8.com/color/344/folder-invoices--v1.png">
+                <h1>folder</h1>
+            </li>
+
+            <li class="icon">
+                <img src="https://img.icons8.com/color/48/000000/picture--v2.png">
+                <h1>images</h1>
+            </li>
+
+            <li class="icon">
+                <img src="https://img.icons8.com/color/344/download-2--v1.png">
+                <h1>downloads</h1>
+            </li>
+
+
+        </ul>
+
+    </main>
+
+    <footer>
+        <section class="icon-wrapper">
+            <img src="https://img.icons8.com/color/344/computer.png">
+            <img src="https://img.icons8.com/color/344/chrome--v1.png" onclick="windowHandler('browser')">
+            <img src="https://img.icons8.com/color/344/map.png" onclick="windowHandler('map')">
+            <img src="https://img.icons8.com/color/344/visual-studio-code-2019.png">
+            <img src="https://img.icons8.com/color/344/settings--v1.png">
+        </section>
+    </footer>
+
+    <script src="./main.js"></script>
+
+</body>
 </html>

@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+html {
+
+    overflow: hidden;
+
+}
+
+.booting-finish {
+
+    z-index: -2 !important;
+
+}
+
+@keyframes booting {
+    0% {
+
+        transform: scale(20);
+        filter: blur(4px);
+
+    }
+    20% {
+
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 1;
+
+    }
+    80% {
+
+        transform: scale(1);
+        filter: blur(0);
+        opacity: 1;
+
+    }
+    100% {
+
+        transform: scale(2);
+        filter: blur(4px);
+        opacity: 0;
+
+    }
+}
+
+.booting {
+
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 11;
+    background: linear-gradient(26deg, #00b4dd, #3edbce, #436cec);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    -o-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+    animation: booting 5s forwards;
+
+    @-webkit-keyframes AnimationName {
+        0%{background-position:76% 0%}
+        50%{background-position:25% 100%}
+        100%{background-position:76% 0%}
+    }
+    @-moz-keyframes AnimationName {
+        0%{background-position:76% 0%}
+        50%{background-position:25% 100%}
+        100%{background-position:76% 0%}
+    }
+    @-o-keyframes AnimationName {
+        0%{background-position:76% 0%}
+        50%{background-position:25% 100%}
+        100%{background-position:76% 0%}
+    }
+    @keyframes AnimationName {
+        0%{background-position:76% 0%}
+        50%{background-position:25% 100%}
+        100%{background-position:76% 0%}
+    }
+
+    h1 {
+
+        color: white;
+        text-align: center;
+        line-height: 100vh;
+        font-weight: 100;
+
+    }
+
+}
+
+.desktop {
+
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(90, 90, 90);
+    background-image: url('https://i.pinimg.com/originals/04/9a/62/049a62222e1ad2ffe721f69159ed3cfd.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    padding: 12px;
+    overflow: hidden;
+
+    .window.opened.maximized {
+
+        top: 0 !important;
+        left: 0 !important;
+        width: 100%;
+        height: 100vh;
+
+    }
+
+    .window.opened {
+
+        width: 80%;
+        height: 80vh;
+        top: 10vh;
+        left: 10%;
+        opacity: 1;
+        z-index: 5 !important;
+        transform: scale(1);
+        filter: blur(0px);
+
+    }
+
+    .hidded {
+
+        z-index: -1;
+
+    }
+
+    .window {
+
+        width: 80%;
+        height: 80vh;
+        position: absolute;
+        border-radius: 12px;
+        overflow: hidden;
+        top: 10vh;
+        left: 10%;
+        // z-index: -5;
+        transform: scale(2);
+        opacity: 0;
+        filter: blur(32px);
+        transition: transform .6s ease-in-out, opacity .6s, filter .6s;
+
+        .window-header {
+
+            width: 100%;
+            height: 42px;
+            background-color: #171717a4;
+            backdrop-filter: blur(12px);
+            display: flex;
+            padding-inline: 12px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+
+            .window-name {
+
+                color: white;
+                font-weight: 300;
+                letter-spacing: 2px;
+                text-align: center;
+                width: 60%;
+                position: absolute;
+                left: 20%;
+
+            }
+
+            .buttons {
+
+                display: flex;
+                gap: 12px;
+
+                span {
+
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    transition: .2s ease-in-out;
+                    opacity: .8;
+
+                    &:hover {
+
+                        opacity: 1;
+                        cursor: pointer;
+
+                    }
+
+                }
+
+                .close {
+
+                    background-color: #fe5d55;
+
+                }
+
+                .minimize {
+
+                    background-color: #febc2f;
+
+                }
+
+                .maximize {
+
+                    background-color: #25c03c;
+
+                }
+
+            }
+
+        }
+
+        iframe {
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .window-content {
+
+            width: 100%;
+            height: 100%;
+            display: flex;
+            backdrop-filter: blur(4px);
+
+            aside {
+
+                width: 400px;
+                height: 100%;
+                background-color: #171717ab;
+                backdrop-filter: blur(4px);
+
+            }
+
+            main {
+
+                width: 100%;
+                height: 100%;
+                background-color: #171717;
+                padding: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+
+                    color: white;
+                    font-weight: 100;
+                    text-align: center;
+                    opacity: .6;
+                    font-size: 32px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .current-date {
+
+        color: white;
+        position: absolute;
+        right: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        * {
+
+            transition: .2s ease-in-out;
+
+        }
+
+        &:hover {
+
+            cursor: default;
+
+            .time, .date {
+
+                opacity: 1;
+
+            }
+
+        }
+
+        .time {
+
+            font-weight: 500;
+            font-size: 32px;
+            letter-spacing: 1px;
+            opacity: .6;
+
+        }
+
+        .date {
+
+            font-weight: 100;
+            font-size: 14px;
+            letter-spacing: 1px;
+            opacity: .4;
+
+        }
+
+    }
+
+    .icons {
+
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+
+        .icon {
+
+            width: 90px;
+            height: fit-content;
+            display: flex;
+            padding-block: 12px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: .2s ease-in-out;
+            backdrop-filter: blur(0px);
+
+            &:hover {
+
+                background-color: #ffffff2c;
+                // border-color: #ffffff2c;
+                cursor: pointer;
+                transform: scale(1.05);
+                backdrop-filter: blur(12px);
+
+                * {
+
+                    opacity: 1;
+
+                }
+
+            }
+
+            * {
+
+                transition: .2s ease-in-out;
+                opacity: .6;
+
+            }
+
+            img {
+
+                width: 50px;
+
+            }
+
+            h1 {
+
+                color: white;
+                font-size: 14px;
+                font-weight: 300;
+
+            }
+
+        }
+
+    }
+
+}
+
+footer {
+
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 32px;
+    z-index: 10;
+
+    .icon-wrapper {
+
+        width: fit-content;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff3d;
+        transition: .2s ease-in-out;
+        padding-inline: 24px;
+        margin: 0 auto;
+
+        &:hover {
+
+            background-color: #ffffff2c;
+            backdrop-filter: blur(12px);
+
+        }
+
+        img {
+
+            height: 50px;
+            transition: .2s ease-in-out;
+            opacity: .6;
+
+            &:hover {
+
+                height: 100px;
+                transform: translateY(-20px);
+                cursor: pointer;
+                opacity: 1;
+
+            }
+
+        }
+
+
+    }
+
+}
